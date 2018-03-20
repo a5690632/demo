@@ -1,0 +1,301 @@
+.home {
+  height: 100vh;
+}
+.home .layout_left {
+  float: left;
+  width: 50px;
+  height: 100%;
+  background-color: #1c2b36;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s linear;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s linear;
+  /* Opera */
+  -ms-transition: all 0.3s linear;
+  /* IE */
+}
+.home .layout_left .t {
+  display: none;
+}
+.home .layout_left.show_text {
+  width: 120px;
+}
+.home .layout_left.show_text .t {
+  display: inline-block;
+}
+.home .layout_left .logo {
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  line-height: 50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 10px;
+  color: #6e7f8e;
+}
+.home .layout_left .logo img {
+  width: 50px;
+  height: 50px;
+}
+.home .layout_left .logo .t {
+  margin-left: -10px;
+}
+.home .layout_left .icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin-right: 13px;
+}
+
+.home .layout_left .menu a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  color: #8d9eaf;
+  padding-left: 18px;
+  white-space: nowrap;
+}
+.home .layout_left .menu a:hover {
+  background-color: #223542;
+}
+.home .layout_left .menu a.active {
+  background-color: #223542;
+  color: #00c48f;
+}
+.home .layout_left .menu a i {
+  font-size: 14px;
+  margin-right: 10px;
+  width: 14px;
+}
+.home .layout_right {
+  padding-left: 50px;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  /* Firefox 4 */
+  -webkit-transition: all 0.3s linear;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.3s linear;
+  /* Opera */
+  -ms-transition: all 0.3s linear;
+  /* IE */
+}
+.home .layout_right.show_text {
+  padding-left: 120px;
+}
+.home .layout_right .header {
+  height: 51px;
+  line-height: 50px;
+  border-bottom: 1px solid #e6e7eb;
+  background: #fff;
+  overflow: hidden;
+}
+.home .layout_right .header .menu_switch,
+.home .layout_right .header .system_name {
+  float: left;
+  line-height: 50px;
+  margin-right: 40px;
+}
+.home .layout_right .header .menu_switch:hover {
+  background-color: #f0f1f3;
+}
+.home .layout_right .sub_menu {
+  float: left;
+  width: 150px;
+  height: calc(100vh - 51px);
+  overflow-y: auto;
+  border-right: 1px solid #e6e7eb;
+  background: #fff;
+}
+.home .layout_right .sub_menu .el-tree {
+  border: none;
+}
+.home .layout_right .sub_menu .el-tree-node {
+  position: relative;
+}
+.home .layout_right .sub_menu .el-tree-node .el-tree-node__content {
+  height: 40px;
+  line-height: 40px;
+}
+.home .layout_right .sub_menu .el-tree-node .el-tree-node__content:hover {
+  background: #f5f6fa;
+}
+.home .layout_right .sub_menu .el-tree-node .el-tree-node__children .el-tree-node__label {
+  font-size: 12px;
+  color: #666;
+}
+.home .layout_right .sub_menu .is-current {
+  background: #f5f6fa;
+  color: #000;
+}
+.home .layout_right .sub_menu .is-current:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: #00c48f;
+}
+.home .layout_right .cotnent_main {
+  height: calc(100vh - 51px);
+  width: calc(100% - 150px);
+  overflow: hidden;
+}
+.home .layout_right .system {
+  margin-right: 30px;
+}
+.home .layout_right .system .el-dropdown {
+  color: #666;
+  font-size: 13px;
+  margin-right: 8px;
+}
+.home .layout_right .system .el-dropdown .el-dropdown-link {
+  cursor: pointer;
+}
+.home .layout_right .system .el-dropdown .down-icon {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border: 5px solid transparent;
+  border-top-color: #666;
+}
+.home .layout_right .system img {
+  width: 40px;
+  height: 40px;
+}
+
+.home .el-select {
+  color: #666;
+}
+.home .el-select input {
+  color: #666;
+}
+.index .ibox.section1 img {
+  width: 100px;
+  height: 100px;
+}
+.index .ibox.section1 .green {
+  color: #00c48f;
+}
+.index .ibox.section1 p {
+  margin: 15px auto 20px;
+}
+.index .ibox.section1 .left {
+  float: left;
+  margin-right: 25px;
+}
+.index .ibox.section1 button {
+  width: 70px;
+  height: 24px;
+  font-size: 12px;
+  background: none;
+  border: 1px solid #848484;
+  border-radius: 3px;
+  float: right;
+  margin-right: 20px;
+  margin-top: 40px;
+  color: #848484;
+}
+.index .ibox.section1 .margin {
+  margin: 0 20px;
+}
+.index .ibox.section2 ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.index .ibox.section2 ul li {
+  float: left;
+  width: 20%;
+  border-right: 1px solid #f0f1f3;
+  padding-top: 10px;
+}
+.index .ibox.section2 ul li:last-child {
+  border-right: none;
+}
+.index .ibox.section2 ul li .title {
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #848484;
+}
+.index .ibox.section2 ul li .data {
+  font-size: 30px;
+  color: #000;
+  font-weight: 100;
+}
+.index .ibox.section2 ul:after {
+  content: "";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.index .ibox.section3 ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.index .ibox.section3 ul li {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #f5f6fa;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.index .ibox.section3 ul li:last-child {
+  border-right: none;
+}
+.index .ibox.section3 ul li .fa {
+  font-size: 40px;
+  color: #00c48f;
+  margin-bottom: 10px;
+}
+.index .ibox.section3 ul li .fa.small {
+  font-size: 14px;
+  color: #ccc;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.index .ibox.section3 ul li p {
+  font-size: 12px;
+  color: #000;
+}
+.index .ibox.section3 ul:after {
+  content: "";
+  height: 0;
+  display: block;
+  clear: both;
+}
+.index .ibox.section3 ul.off {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  padding: 20px;
+}
+.index .ibox.section3.ibox {
+  margin-bottom: 0;
+}
+
+.home .layout_right .header .menu_switch {
+  width: 54px;
+  height: 50px;
+  cursor: pointer;
+
+}
+.home .layout_right .header .menu_switch img{
+  margin-left:27px ;
+
+
+}

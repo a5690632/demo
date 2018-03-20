@@ -1,0 +1,81 @@
+该目录为V2数据统计各模块用到的表格配置项
+
+每一个文件表示一个模块的表格配置
+
+
+ptfwfx-wzgk-sfymph.js		平台访问分析/网站概括/受访页面排行
+ptfwfx-wzgk-lywzph.js 		平台访问分析/网站概括/来源网站排行
+ptfwfx-qsfx-qsfx.js			平台访问分析/趋势分析/趋势分析
+ptfwfx-qsfx-fwxq.js			平台访问分析/趋势分析/访问详情
+ptfwfx-ymfx.js				平台访问分析/页面分析/页面分析
+ptfwfx-sjfx-sjlx.js   		平台访问分析/事件分析/事件类型
+ptfwfx-sjfx-sjxw.js 		平台访问分析/事件分析/事件行为
+ptfwfx-sjfx-sjmc.js 		平台访问分析/事件分析/事件名称
+ptfwfx-tgfx-lyfx.js			平台访问分析/推广分析/来源分析
+ptfwfx-tgfx-qdly.js			平台访问分析/推广分析/渠道分析1
+ptfwfx-tgfx-dqly2.js		平台访问分析/推广分析/渠道分析2
+fkfx-fkfx-dyfb.js			访客分析/访客分析/地域分布
+fkfx-xthj-czxtlx.js			访客分析/系统环境/操作系统类型
+fkfx-xthj-llqlx.js			访客分析/系统环境/浏览器类型
+fkfx-xthj-sblx.js			访客分析/系统环境/设备类型
+fkfx-ssfk-ssfk.js      		访客分析/实时访客/实时访客	叫访客日志更合适一些
+hyfx-hyfx-zchyzs.js			会员分析/会员分析/注册会员总数  还没做
+hyfx-hyfx-jbtj.js  			会员分析/会员分析/基本统计
+hyfx-hyfx-dyfb.js      		会员分析/地域分布
+smfx-smfx-smdytj.js    		扫码分析/扫码分析/扫码地域统计
+smfx-smfx-pchtj.js     		扫码分析/扫码分析/批次号统计        
+jffx-jffx-jfhqxhqk.js  		积分分析/积分分析/积分获取消耗情况
+jfscfx-jfscfx-gl.js      	积分商城分析/积分商城分析/概览
+jfscfx-jfscfx-jfscdhqk.js	积分商城分析/积分商城分析积分商城兑换情况
+
+*dzbd.js 					定制表单
+
+ltfx-gl.js            	论坛分析/概览（目前宋震的接口没有反馈该模块的配置信息）
+ltfx-bktj.js          	论坛分析/板块统计（目前宋震的接口没有反馈该模块的配置信息）
+ltfx-rtph.js          	论坛分析/热贴排行（目前宋震的接口没有反馈该模块的配置信息）
+
+
+
+--------------------------
+
+
+别名与模块的对应关系
+visit_toppage			平台访问分析/网站概括/受访页面排行
+visit_source			平台访问分析/网站概括/来源网站排行
+trend_table				平台访问分析/趋势分析/趋势分析
+trend_all				平台访问分析/趋势分析/访问详情
+page					平台访问分析/页面分析/页面分析
+event_category			平台访问分析/事件分析/事件类型
+event_action			平台访问分析/事件分析/事件行为
+event_name				平台访问分析/事件分析/事件名称
+source_table			平台访问分析/推广分析/来源分析
+channel_all				平台访问分析/推广分析/渠道分析1
+channel_detail			平台访问分析/推广分析/渠道分析2
+district_table			访客分析/地域分布/地域分布
+client_os				访客分析/系统环境/操作系统类型
+browser					访客分析/系统环境/浏览器类型
+device					访客分析/系统环境/设备类型
+trend_latest			访客分析/实时访客/实时访客	叫访客日志更合适一些
+member_number			访客分析/访客分析/注册会员总数
+member_basic			会员分析/会员分析/基本统计
+member_map				会员分析/会员分析/地域分布
+scancode_map			扫码分析/扫码分析/扫码地域统计
+batch					扫码分析/扫码分析/批次号统计
+point_statistics		积分分析/积分分析/积分获取消耗情况
+pointmall_statistics	积分商城分析/积分商城分析/概览
+pointmall_exchange		积分商城分析/积分商城分析/积分商城兑换情况
+
+
+
+
+
+论坛分析所有模块没有做								宋震public_ajax_get_forms接口中没有返回论坛分析模块的列表
+平台访问分析/网站概况/论坛浏览量最高的帖子排行  	在页面被隐藏（正式页面没有反馈此数据，应该是没有用着该模块）
+平台访问分析/网站概况/积分商城兑换排行          	在页面被隐藏（正式页面没有反馈此数据，应该是没有用着该模块）
+扫码分析/活动名称统计                  				在页面被隐藏（正式页面没有反馈此数据，应该是没有用着该模块）
+积分商城分析/商城访客地域分布        				被注释（正式页面没有反馈此数据，应该是没有用着该模块）
+
+
+
+control.js 			使用默认数据的控制器
+control_nodata.js 	只有默认配置的控制器，需要异步获取数据然后手动进行数据初始化（调用setData方法）
