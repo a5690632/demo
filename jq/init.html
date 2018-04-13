@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var jQuery = function () {
+            return new jQuery.prototype.init();
+        }
+        jQuery.prototype = {
+            constructor: jQuery,
+            init: function () {
+                this.jquery = 1.0;
+                return this;
+            },
+            jquery: 2.0,
+            each: function () {
+                console.log('each');
+                return this;
+            }
+        }
+        jQuery().jquery //1.0
+        jQuery.prototype.jquery //2.0
+        var jq=jQuery()
+        jq.__proto__ =jQuery.prototype;
+
+        console.log(jq.each)
+    </script>
+</body>
+
+</html>
