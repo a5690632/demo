@@ -196,8 +196,6 @@ export default {
     this.$axios.get("/api/json").then((res)=>{
         console.log(res.data)
     })
-
-
   }
 };
 </script>

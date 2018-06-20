@@ -8,6 +8,7 @@ import  marketing_strategy from  "../components/send_menu/marketing_strategy.vue
 import  order  from "../components/send_menu/order.vue"
 import report_management from "../components/send_menu/report_management.vue" 
 import wind_control from "../components/send_menu/wind_control.vue"
+
 Vue.use(Router)
 
 export default new Router({
