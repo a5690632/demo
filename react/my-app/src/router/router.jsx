@@ -1,9 +1,10 @@
 import {
+    HashRouter,
     Route,
-    HashRouter
-} from "react-router-dom";
+  } from 'react-router-dom'
 import React, { Component } from 'react';
-
+import Head from "../head/head"
+import Body from "../body/body"
 import App from '../App';
 
 
@@ -12,9 +13,10 @@ class router extends Component {
     render() {
         return (
             <HashRouter>
-                <div>
-                    <Route path="/" component={App} />
-                </div>
+                <Route path='/' component={App}>
+                    <Route path='head' component={Head} />
+                    <Route path='body' component={Body} />
+                </Route>
             </HashRouter>
         )
     }
