@@ -14,8 +14,8 @@ class router extends Component {
         return (
             <HashRouter>
                 <Route path='/' component={App}>
-                    <Route path='head' component={Head} />
-                    <Route path='body' component={Body} />
+                    {/* <Route path='head' component={Head} />
+                    <Route path='body' component={Body} /> */}
                 </Route>
             </HashRouter>
         )

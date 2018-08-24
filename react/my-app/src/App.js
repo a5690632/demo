@@ -1,40 +1,42 @@
-import React, { Component } from 'react';
-import "./App.css"
+import React, { Component } from 'react'
 
+import { connect } from 'react-redux';
 
-import { connect } from 'react-redux'
-
-
-function mapDispatchToprops (dispatch) {
-  return {
-      add:function(){
-       
-      },
-      min: () => dispatch("min")
-  };
-}
-
-const mapStateToProps = state=> {
-
-  return {
-    num: state
-  };
-}
+import Head from "./head/head"
+import Body from "./body/body"
 
 
 class App extends Component {
   render() {
-    console.log(this.props)
     return (
       <div>
+        <Head></Head>
+        <Body></Body>
         <div>
-          {this.props.num}
+          {this.props.value}
         </div>
-        <button onClick="{this.props.add}">+</button>
-        <button onClick="{this.props.min}">-</button>
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToprops)(App);
+
+
+
+function mapState(state) {
+  return {
+    value: state.num
+  }
+}
+function mapDispatch(dispatch) {
+  return {
+    add: () => {
+      dispatch({type:"add"})
+    },
+    min: () => {
+      dispatch({type:"min"})
+    }
+  }
+}
+
+export default connect(mapState, mapDispatch)(App)

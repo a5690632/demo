@@ -1,15 +1,34 @@
 import React, { Component } from 'react'
 
-
+import { connect } from 'react-redux';
 export class body extends Component {
   render() {
-    return (
-      <div>
-        body
-      </div>
 
-)
-  }
+    return (
+        <div>
+            <button onClick={this.props.min}>+</button>
+        </div>
+    )
+}
 }
 
-export default body
+
+
+function mapState(state) {
+
+return {
+ 
+}
+}
+function mapDispatch(dispatch) {
+
+return {
+  min: () => {
+    dispatch({type:"min"})
+  },
+ 
+
+}
+}
+
+export default connect(mapState, mapDispatch)(body)

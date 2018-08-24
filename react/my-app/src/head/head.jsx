@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import "./head.css"
 import { Button } from 'antd';
+import { connect } from 'react-redux';
+
+
+
 class head extends Component {
     constructor(props) {
         super(props)
@@ -10,11 +14,32 @@ class head extends Component {
 
  
     render() {
+        console.log(this.props)
         return (
             <div>
-                <Button>asd</Button>
+                <button onClick={this.props.add}>+</button>
             </div>
         )
     }
 }
-export default head;
+
+
+
+function mapState(state) {
+
+    return {
+     
+    }
+  }
+  function mapDispatch(dispatch) {
+  
+    return {
+      add: () => {
+        dispatch({type:"add"})
+      },
+     
+  
+    }
+  }
+  
+  export default connect(mapState, mapDispatch)(head)
