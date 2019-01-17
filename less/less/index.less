@@ -1,0 +1,21 @@
+
+
+
+.boder(@boder){
+    border-1: @boder solid red;
+}
+.boder(@boder;@color:red;@width:2px){
+    border-2: @boder solid red;
+    color-2:@color;
+    width-2: @width;
+}
+
+.boder(@boder;@color;@width:3px){
+    border-3: @boder solid red;
+    color-3:@color;
+    width-3:@width; 
+
+}
+body{
+    .boder(1px)
+}

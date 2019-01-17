@@ -1,37 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
 
-<body>
-    <div>
+    <body>
+        <div>
 
-    </div>
-    <script>
-        var clone = function (v) {
-            var o = v.constructor === Array ? [] : {};
-            for (var i in v) {
-                o[i] = typeof v[i] === "Object" ? clone(v[i]) : v[i];
-            }
-            return o;
-        }
-        var a = clone({
-            a: "1",
-            b: {
-                c: 1
-            },
-            d: function () {
+        </div>
+        <script>
 
-            },
-            add: "as"
-        })
-        console.log(a)
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>

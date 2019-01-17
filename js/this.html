@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+
+    <body>
+        <button id="btn">asdasd1</button>
+        <script>
+            function fn(fn) {
+                return function () {
+                    alert(1)
+                    fn()
+                    console.log(this)
+                }
+            }
+            var fun = fn(() => {
+                console.log(this)
+            })
+            document.getElementById("btn").onclick = fun
+        </script>
+    </body>
+
+</html>

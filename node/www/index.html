@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+
+    <body>
+        <button id="btn">按钮</button>
+    </body>
+    <script>
+        function send() {
+            console.log(1);
+            axios.post("http://localhost:99/login", {
+                user: 1
+            }).then(res => {
+                console.log(res.data);
+            });
+        }
+        document.getElementById("btn").onclick = send;
+    </script>
+
+</html>
