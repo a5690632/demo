@@ -1,13 +1,6 @@
-import React from 'react';
-import { render } from 'react-dom';
-import store from './redux/store/store'
-import { Provider } from 'react-redux';
-import Router from "./router/router"
+import React from "react";
+import ReactDOM from "react-dom";
 
+import App from "./App";
 
-render(
-    <Provider store={store}>
-        <Router></Router>
-    </Provider>,
-    document.body.appendChild(document.createElement('div'))
-);
+ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,42 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { connect } from 'react-redux';
-
-import Head from "./head/head"
-import Body from "./body/body"
-
+import "./App.css";
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Head></Head>
-        <Body></Body>
-        <div>
-          {this.props.value}
-        </div>
-      </div>
-    )
-  }
-}
-
-
-
-
-function mapState(state) {
-  return {
-    value: state.num
-  }
-}
-function mapDispatch(dispatch) {
-  return {
-    add: () => {
-      dispatch({type:"add"})
-    },
-    min: () => {
-      dispatch({type:"min"})
+    constructor() {
+        super();
     }
-  }
+    render() {
+        return <div className="App" onClick={this.haha} />;
+    }
+    haha() {
+        console.log(1);
+    }
 }
 
-export default connect(mapState, mapDispatch)(App)
+export default App;
