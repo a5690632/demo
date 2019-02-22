@@ -1,0 +1,4 @@
+<!-- index.wxml -->
+<view class="container">
+    <list innerText="s1" bind:haha="haha"></list>
+</view>

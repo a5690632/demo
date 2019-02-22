@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./index.less";
 import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import { Button } from "antd";
 class Head extends Component {
     constructor(props) {
         super(props);
@@ -11,8 +11,12 @@ class Head extends Component {
     render() {
         return (
             <div className="head">
-                <div onClick={this.home}>HOME</div>
-                <div onClick={this.detail}>DETAIL</div>
+                <Button type="primary" onClick={this.home}>
+                    HOME
+                </Button>
+                <Button type="primary" onClick={this.detail}>
+                    DETAIL
+                </Button>
             </div>
         );
     }
