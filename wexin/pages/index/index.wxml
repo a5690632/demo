@@ -1,4 +1,13 @@
 <!-- index.wxml -->
 <view class="container">
-    <list innerText="s1" bind:haha="haha"></list>
+    <swiper current="{{0}}">
+        <block>
+            <swiper-item>
+                <scroll-view class="scroll-view_H" scroll-y style="width: 100%">
+                    <view wx:for="{{imgUrls}}" class="item">{{item}}</view>
+                </scroll-view>
+            </swiper-item>
+            <swiper-item></swiper-item>
+        </block>
+    </swiper>
 </view>

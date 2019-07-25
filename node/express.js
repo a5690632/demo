@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const login = require("./express1");
+const list = require("./list");
 
 //获取cookie的中间件
 var cookie = require("cookie-parser");
@@ -16,13 +16,17 @@ app.use(
     })
 );
 app.use(bodyParser.json());
+
 //session
-// let session = require("cookie-session");
-// app.use(
-//     session({
-//         keys: ["123", "asda"]
-//     })
-// );
+let session = require("cookie-session");
+app.use(
+    session({
+        keys: ["123", "asda"]
+    })
+);
+
+
+
 
 app.all("*", function(req, res, next) {
     //跨域处理
@@ -41,9 +45,10 @@ app.all("*", function(req, res, next) {
         next();
     }
 });
-app.use("/", (req, res, next) => {
+app.all("/", (req, res, next) => {
     // req.secure="密钥"
     // 只能用cookie获取
+
     // 用cookie-parser 设置的签名cookie
     //用  req.signedCookies 获取
     // res.cookie('user', 1, {
@@ -57,10 +62,13 @@ app.use("/", (req, res, next) => {
     // } else {
     //     req.session["user"] = 1; //设置
     // }
-    // delete req.session["user"]; //删除
-    // res.sendStatus(200); S
+    console.log(1)
+    res.sendStatus(200);
 
     next();
 });
-app.use("/login", login);
+app.use("/list", list);
+
+
+
 app.listen(99);

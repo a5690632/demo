@@ -1,15 +1,11 @@
-let deck = {
-    suits: ["hearts", "spades", "clubs", "diamonds"],
-    cards: Array(52),
-    createCardPicker: function () {
-        return () => {
-            let pickedCard = Math.floor(Math.random() * 52);
-            let pickedSuit = Math.floor(pickedCard / 13);
-            return { suit: this.suits[pickedSuit], card: pickedCard % 13 };
-        };
+class c {
+    constructor() {
+        this.asd = "a";
     }
-};
-let cardPicker = deck.createCardPicker();
-let pickedCard = cardPicker();
-console.log(pickedCard);
-alert("card: " + pickedCard.card + " of " + pickedCard.suit);
+    app() {
+    }
+}
+class a extends c {
+}
+let greeter1;
+greeter1 = new a();

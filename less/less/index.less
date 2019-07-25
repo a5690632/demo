@@ -1,21 +1,81 @@
+@purpleBText: #7d5ae7;
+@darkText: #666666;
+@lightText: #999999;
+@darkLine: #eaeaea;
 
+.time-line {
+    list-style: none; // 不显示列表默认样式(即就是左侧的小黑点或数字)
+    margin: 0;
+    position: relative;
+    top: -18px;
 
+    // 列表项内容
+    .list-content {
+        display: flex;
+        font-size: 12px;
+        padding: 12px 10px 12px 0;
+        margin-left: 10px;
+        position: relative;
+        bottom: -18px;
 
-.boder(@boder){
-    border-1: @boder solid red;
-}
-.boder(@boder;@color:red;@width:2px){
-    border-2: @boder solid red;
-    color-2:@color;
-    width-2: @width;
-}
+        .title {
+            flex-grow: 1;
+        }
 
-.boder(@boder;@color;@width:3px){
-    border-3: @boder solid red;
-    color-3:@color;
-    width-3:@width; 
+        .time {
+            font-weight: 200;
+            font-size: 12px;
+            color: @lightText;
+        }
+    }
 
-}
-body{
-    .boder(1px)
+    .timeline-stone {
+        border-left: @darkLine 1px solid;
+        position: relative;
+        margin-left: -23px;
+        font-weight: 200;
+        color: @darkText;
+
+        &::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: @darkLine;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: -3px;
+        }
+
+        &.is-completed {
+            border-left-color: @purpleBText;
+            z-index: 1;
+            color: @purpleBText;
+            font-weight: 600;
+
+            &:first-child {
+                border-left: transparent 1px solid;
+            }
+
+            &::before {
+                width: 11px;
+                height: 11px;
+                background-color: @purpleBText;
+                opacity: 0.4;
+                left: -6px;
+                bottom: -5px;
+            }
+
+            &::after {
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                position: absolute;
+                background-color: @purpleBText;
+                left: -4px;
+                bottom: -3px;
+            }
+        }
+    }
 }

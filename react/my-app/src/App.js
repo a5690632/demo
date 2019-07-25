@@ -9,11 +9,10 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Head />
-                    <div>
-                        <Route path="/home" component={Home} />
-                        <Route path="/detail" component={Detail} />
-                    </div>
+                    <Head initialState={
+                        "1"
+                    } />
+                    <Home></Home>
                 </div>
             </BrowserRouter>
         );

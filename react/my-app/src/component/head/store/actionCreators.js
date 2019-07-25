@@ -10,3 +10,10 @@ export const MIN = () => {
         type: constants.MIN
     };
 };
+export const home = (data, data1) => {
+    console.log(data, data1)
+    return {
+        type: constants.HOME,
+
+    };
+};

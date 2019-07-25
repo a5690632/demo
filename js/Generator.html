@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function* gen() {
+      for (let i = 0; i < 5; i++) {
+        console.log(i)
+        var reset = yield i;
+        console.log(reset)
+      }
+    }
+    var g = gen();
+    g.next()
+    g.next(456) // 456 gen.js:5 提示第5行打印
+    g.next(123)
+  </script>
+</body>
+
+</html>

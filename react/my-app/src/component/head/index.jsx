@@ -1,52 +1,17 @@
-import React, { Component } from "react";
-import "./index.less";
-import { withRouter, Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { Button } from "antd";
-class Head extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props.value);
-    }
-    render() {
-        return (
-            <div className="head">
-                <Button type="primary" onClick={this.home}>
-                    HOME
-                </Button>
-                <Button type="primary" onClick={this.detail}>
-                    DETAIL
-                </Button>
-            </div>
-        );
-    }
-    home = () => {
-        this.props.history.push({
-            pathname: "/",
-            query: {
-                id: 1
-            }
-        });
-    };
-    detail = () => {
-        this.props.history.push({
-            pathname: "/detail",
-            query: {
-                id: 2
-            }
-        });
-    };
+import React, { useState, useEffect } from 'react';
+
+function Example({ initialState }) {
+    // Declare a new state variable, which we'll call "count"
+    let [value, setValue] = useState(initialState)
+    useEffect(() => {
+        console.log("asd1")
+    })
+    return (
+        <div>
+            {value}
+            <button onClick={() => setValue(2)}>按钮</button>
+        </div>
+    );
+
 }
-
-const mapStateToProps = state => ({
-    value: state.Head.value
-});
-
-const mapDispatchToProps = () => ({});
-
-export default withRouter(
-    connect(
-        mapStateToProps,
-        mapDispatchToProps
-    )(Head)
-);
+export default Example

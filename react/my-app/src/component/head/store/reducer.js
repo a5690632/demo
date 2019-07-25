@@ -12,6 +12,9 @@ export default (state = initialState, { type, payload }) => {
         case constants.MIN:
             let value = --state.value;
             return { ...state, value };
+        case constants.HOME:
+            console.log(1)
+            return { ...state };
         default:
             return state;
     }

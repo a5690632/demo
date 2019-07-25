@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Hellow",
+            "request": "launch",
+            "mainClass": "user.Hellow"
+        }
+    ]
+}

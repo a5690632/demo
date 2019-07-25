@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.0",
 	"appid": "wx773c7908389f9015",
-	"projectname": "wexin",
+	"projectname": "demo",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

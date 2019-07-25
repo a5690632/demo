@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
 
 
-    <body>
-        <button id="btn">asdasd1</button>
-        <script>
-            function fn(fn) {
-                return function () {
-                    alert(1)
-                    fn()
-                    console.log(this)
-                }
-            }
-            var fun = fn(() => {
-                console.log(this)
-            })
-            document.getElementById("btn").onclick = fun
-        </script>
-    </body>
+<body>
+  <button id="btn">asdasd1</button>
+  <script>
+    // function fn(fn) {
+    //     return function () {
+    //         alert(1)
+    //         fn()
+    //         console.log(this)
+    //     }
+    // }
+    // var fun = fn(() => {
+    //     console.log(this)
+    // })
+    // document.getElementById("btn").onclick = fun
+
+    Function.prototype.bind = function (context, ...args) {
+      if (typeof this !== 'function') {
+        throw new TypeError(`${this} is not a function`)
+      }
+      let that = this;
+      function bindFn(...arg) {
+        that.apply(this instanceof bindFn ? this : context, [...args, ...arg]);
+      }
+      bindFn.prototype = Object.create(this.prototype);
+      /*返回一个绑定后的函数*/
+      return bindFn;
+    }
+
+
+
+    Function.prototype.apply = function (context = window, ...args) {
+      if (typeof this !== 'function') {
+        throw new TypeError(`${this} is not a function`)
+      }
+      const key = Symbol()
+      context[key] = this
+      const result = context[key](...args)
+
+      delete context[key]
+      return result
+    }
+
+
+
+
+  </script>
+</body>
 
 </html>

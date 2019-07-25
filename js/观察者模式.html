@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class obj {
+            constructor() {
+                this.name = "haha"
+                this.observies = []
+            }
+            getName() {
+                return this.name
+            }
+            setName(name) {
+                this.name = name
+                this.observies.forEach(e => {
+                    e.add()
+                })
+            }
+            add(e) {
+                this.observies.push(e)
+            }
+        }
+        class observie {
+            constructor(name, obj) {
+                this.name = name
+                this.obj = obj
+                this.obj.add(this)
+            }
+            add() {
+                console.log(this.name)
+            }
+        }
+        let lala = new obj("haha")
+        let lala1 = new observie("haha1", lala)
+        let lala2 = new observie("haha2", lala)
+        let lala3 = new observie("haha3", lala)
+        lala.getName()
+        lala.setName("haha1")
+    </script>
+</body>
+
+</html>

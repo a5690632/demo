@@ -1,27 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    </head>
 
-    <body>
-        <button id="btn">按钮</button>
-    </body>
-    <script>
-        function send() {
-            console.log(1);
-            axios
-                .post("http://localhost:99/login/", {
-                    user: 1
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css" />
+</head>
+
+<body>
+    <div id="box">
+        <i-table :columns="columns" :data="data"></i-table>
+        <i-form ref="formInline" :model="formInline" inline>
+            <FormItem prop="user">
+                <i-input type="text" v-model="formInline.user" placeholder="Username" />
+            </FormItem>
+            <FormItem>
+                <i-input type="password" v-model="formInline.password" placeholder="Password">
+                </i-input>
+            </FormItem>
+            </FormItem>
+            <FormItem>
+                <i-button type="primary" @click="add">Signin</i-button>
+            </FormItem>
+        </i-form>
+
+
+
+
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#box",
+        data: {
+            columns: [{
+                    title: 'id',
+                    key: 'id'
+                },
+                {
+                    title: 'user',
+                    key: 'user'
+                },
+                {
+                    title: 'password',
+                    key: 'password'
+                },
+                {
+                    title: 'Action',
+                    key: 'action',
+                    render: (h, params) => {
+                        return h('div', [
+                            h('Button', {
+                                props: {
+                                    type: 'text',
+                                    size: 'small'
+                                }
+                            }, 'View'),
+                            h('Button', {
+                                props: {
+                                    type: 'text',
+                                    size: 'small'
+                                },
+                                on: {
+                                    click: () => {
+
+                                        vm.del(params.row.id)
+                                    }
+                                }
+                            }, 'Edit')
+                        ]);
+                    }
+                }
+            ],
+            data: [],
+            total: "",
+            formInline: {
+                user: "",
+                password: "",
+            }
+
+        },
+        created() {
+            function* gen() {
+                var list = yield axios.get("/list", {
+                    params: {
+                        pageNumber: 1,
+                        pageSize: 10
+                    }
+                }).then((res) => {
+                    // ajax.next(res)
                 })
-                .then(res => {
-                    console.log(res.data);
-                });
-        }
-        document.getElementById("btn").onclick = send;
-    </script>
+                console.log(list)
+            }
+            let ajax = gen()
+            ajax.next()
+
+        },
+        methods: {
+            add() {
+                axios.post("/list/add", {
+                    user: this.formInline.user,
+                    password: this.formInline.password
+                }).then(res => {
+
+                })
+            },
+            del(id) {
+                axios.post("/list/del", {
+                    id
+                })
+            }
+        },
+
+    });
+</script>
+
+</html>
+<style>
+    .i-input {
+        display: block;
+    }
+</style>
+
 </html>
