@@ -1,13 +1,4 @@
 <!-- index.wxml -->
 <view class="container">
-    <swiper current="{{0}}">
-        <block>
-            <swiper-item>
-                <scroll-view class="scroll-view_H" scroll-y style="width: 100%">
-                    <view wx:for="{{imgUrls}}" class="item">{{item}}</view>
-                </scroll-view>
-            </swiper-item>
-            <swiper-item></swiper-item>
-        </block>
-    </swiper>
+  <video src="http://pgc.cdn.xiaodutv.com/931830948_2814319133_2017062912341920180628082620.mp4?Cache-Control=max-age%3D8640000&responseExpires=Sat%2C+06+Oct+2018+08%3A30%3A22+GMT&xcode=1f43a20502fa2d83fbf736c13dda07f35fa122a44ad24a00&time=1564740324&_=1564655263413" id="video" bindwaiting="wait" controls="{{false}}" show-center-play-btn="{{false}}" />
 </view>

@@ -1,8 +1,10 @@
 <template>
   <div id="box">
-    <div class="left fl">
+    {{data.name}}
+    <test></test>
+    <!-- <div class="left fl">
       <div class="clearfix">
-        <img src="../assets/images/ic_launcher.png" class="img1-1 fl">
+        <img src="../assets/images/ic_launcher.png" class="img1-1 fl" />
         <div class="title fl">伴婚礼</div>
       </div>
       <div class="text">
@@ -13,30 +15,53 @@
         <dl>
           <dt>客户端下载</dt>
           <dd>
-            <img src="../assets/images/erweima.png" class="img1-2">
+            <img src="../assets/images/erweima.png" class="img1-2" />
           </dd>
         </dl>
         <dl>
           <dt>客户端下载</dt>
           <dd>
-            <img src="../assets/images/erweima.png" class="img1-3">
+            <img src="../assets/images/erweima.png" class="img1-3" />
           </dd>
         </dl>
       </div>
     </div>
     <div class="right fr">
-      <img src="../assets/images/home_pic_decorate.png" class="img1-4">
-      <img src="../assets/images/home_pic_phone.png" class="img1-5">
+      <img src="../assets/images/home_pic_decorate.png" class="img1-4" />
+      <img src="../assets/images/home_pic_phone.png" class="img1-5" />
     </div>
     <div class="footer">
       <span class="contact_us">联系我们</span>
       <span>公安备案号199856265662</span>
-    </div>
+    </div>-->
   </div>
 </template>
 <script>
+import test from "./text";
+import { ref, reactive, watch, setup, provide } from "@vue/composition-api";
 export default {
-  name: "index"
+  name: "index",
+  setup() {
+    const data = reactive({
+      name: "asd",
+      value: "asd1",
+      data: {
+        name: "1"
+      }
+    });
+    const fn = () => {
+      console.log("click");
+    };
+    provide("asd", "asd");
+    provide("btn", fn);
+
+    return {
+      data
+    };
+  },
+  components: {
+    test
+  }
 };
 </script>
 <style scoped lang="less">

@@ -5,18 +5,19 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./view/home/home";
 import Detail from "./view/detail/detail";
 class App extends Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <div>
-                    <Head initialState={
-                        "1"
-                    } />
-                    <Home></Home>
-                </div>
-            </BrowserRouter>
-        );
-    }
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Head initialState={
+            "1"
+          } />
+          <Home></Home>
+          <Detail></Detail>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 const mapStateToProps = state => ({});
@@ -24,6 +25,6 @@ const mapStateToProps = state => ({});
 const mapDispatchToProps = {};
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(App);
